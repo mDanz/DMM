@@ -9,7 +9,6 @@ contract Controller{
 	TokenInterface private token;
 
 	address private adminContract;
-	address private pcContract;
 
 	struct Change{
 		uint256 confirmationCount;
@@ -31,17 +30,22 @@ contract Controller{
 		_;
 	}
 
-	constructor(address _adminAddress, address _PCAddress) public{
+	constructor(address _adminAddress, address _tokenContract, address _powerChangerContract) public{
 		adminContract = _adminAddress;
-		pcContract = _PCAddress;
+		token = TokenInterface(_tokenContract);
+		powerChangers = PowerChangersInterface(_powerChangerContract);
 	}
 
 	function setAdminContract(address _adminContract) external /*onlyAdmin*/{
 		adminContract = _adminContract;
 	}
 
-	function setPCContract(address _PCAddress) external /*isAdminContract*/{
-		pcContract = _PCAddress;
+	function setTokenInterface(address _tokenContract) external /*onlyAdmin*/{
+		token = TokenInterface(_tokenContract);
+	}
+
+	function setPowerChangerInterface(address _powerChangerContract) external /*onlyAdmin*/{
+		powerChangers = PowerChangersInterface(_powerChangerContract);
 	}
 
 	function initiateChange(uint256 _amount, address _user) external /*onlyPC*/{
@@ -59,6 +63,7 @@ contract Controller{
 		changes[_id].confirmations.push(tx.origin);
 		changes[_id].confirmationCount += 1;
 		if (powerChangers.getsApproved(changes[_id].confirmationCount)){
+			changes[_id].approved = true;
 			executeChange(_id);
 		}
 	}

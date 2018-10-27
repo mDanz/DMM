@@ -58,10 +58,8 @@ contract PowerChangers{
 	}
 
 	function getsApproved(uint256 _confirmationCount) public view returns(bool){
-		uint256 confirmations = SafeMath.mul(_confirmationCount, 100);
-		uint256 maxCount = SafeMath.mul(powerChangerCount, 100);
-		uint256 result = SafeMath.div(SafeMath.div(confirmations, maxCount), 100);
-		if(result >= requirement){
+		uint256 confirmations = SafeMath.div(SafeMath.mul(_confirmationCount, 100), powerChangerCount);
+		if(confirmations >= requirement){
 			return true;
 		} else {
 			return false;
