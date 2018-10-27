@@ -16,8 +16,8 @@ contract PowerChangers{
 		_;
 	}
 
-	constructor(address _address) public{
-		adminContract = _address;
+	constructor(address _adminContract) public{
+		adminContract = _adminContract;
 	}
 
 	/*function setPowerChangersInterface(address _powerChangersInterfaceAddr) external isAdmin{

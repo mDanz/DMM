@@ -13,16 +13,15 @@ contract Admin{
     _;
   }
 
-  constructor (address _powerChangersInterfaceAddr, address[] _admins) public{
-    powerChangers = PowerChangersInterface(_powerChangersInterfaceAddr);
+  constructor (address[] _admins) public{
     for (uint256 i = 0; i < _admins.length; i++){
       isAdmin[_admins[i]] = true;
     }
   }
 
-  /*function setPowerChangersInterface(address _powerChangersInterfaceAddr) external onlyAdmin{
-    powerChangers = powerChangersInterface(_powerChangersInterfaceAddr);
-  }*/
+  function setPowerChangersInterface(address _powerChangersInterfaceAddr) external onlyAdmin{
+    powerChangers = PowerChangersInterface(_powerChangersInterfaceAddr);
+  }
 
   function addChanger(address _user) external onlyAdmin{
     powerChangers.addPC(_user);
