@@ -1,0 +1,16 @@
+.header-bar-brand {
+  display: flex;
+  white-space: nowrap;
+}
+
+.header-bar-brand-font {
+  font-size: 2em;
+}
+
+.header-bar-brand-font-wrapper {
+  margin: auto 0;
+}
+
+.header-bar-brand img {
+  height: 2em;
+}

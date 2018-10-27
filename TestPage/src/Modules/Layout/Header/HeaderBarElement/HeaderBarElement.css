@@ -1,0 +1,24 @@
+.header-bar-element {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 0 auto;
+  margin-right: 1rem;
+}
+
+
+.header-bar-element > :last-child,
+.header-bar-element > :nth-last-child(2) {
+  margin-right: 0;
+}
+
+.header-bar-element--justifyContent--start {
+  justify-content: flex-start;
+}
+
+.header-bar-element--justifyContent--center {
+  justify-content: center;
+}
+
+.header-bar-element--justifyContent--end {
+  justify-content: flex-end;
+}

@@ -1,0 +1,15 @@
+.page-frame {
+ position: absolute;
+ left: -1px;
+ right: -1px;
+ width: 100%;
+ pointer-events: none;
+}
+
+.page-frame--top {
+ top: -1px;
+}
+
+.page-frame--bottom {
+  bottom: -1px;
+}

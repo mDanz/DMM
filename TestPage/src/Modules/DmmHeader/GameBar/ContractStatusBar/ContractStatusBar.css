@@ -1,0 +1,10 @@
+
+.contractStatusBar-statusLed {
+  height: 1.4285em;
+  width: 1.4285em;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 1.5em;
+  margin-top: auto;
+  margin-bottom: auto;
+}

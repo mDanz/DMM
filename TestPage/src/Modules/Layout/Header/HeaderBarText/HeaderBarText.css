@@ -1,0 +1,17 @@
+.header-bar-text {
+  display: inline-block;
+  margin-right: 1.4285em;
+  margin-top: auto;
+  margin-bottom: auto;
+  -webkit-filter: brightness(3);
+  filter: brightness(3);
+}
+
+.header-bar-text--seperator {
+  margin-right: 3.5714em;
+}
+
+.header-bar-text--isEmphasized {
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%);
+}

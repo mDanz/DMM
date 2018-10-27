@@ -1,0 +1,112 @@
+.loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #142710;
+  opacity: 1;
+  pointer-events: none;
+  -webkit-transition: opacity cubic-bezier(.4, 0, .2, 1) 2000ms;
+  -moz-transition: opacity cubic-bezier(.4, 0, .2, 1) 2000ms;
+  transition: opacity cubic-bezier(.4, 0, .2, 1) 2000ms;
+  z-index: 11000;
+}
+
+.loading-screen--fade {
+  opacity: 0;
+}
+
+.initial-loading-screen-spinner-wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.initial-loading-screen-spinner {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-animation: fadein 2000ms;
+  -moz-animation: fadein 2000ms;
+  animation: fadein 2000ms;
+  height: 250px;
+}
+
+.initial-loading-screen-spinner-outer {
+  position: absolute;
+  display: flex;
+  height: inherit;
+  border-radius: 50%;
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  align-self: center;
+  z-index: 11010;
+}
+
+.spin {
+  animation: SpinnerSpin infinite 9s linear;
+}
+
+.initial-loading-screen-spinner-inner {
+  display: flex;
+  z-index: 11020;
+}
+
+.loading-text {
+  font-size: 30px;
+  font-family: Cipher;
+  letter-spacing: 0.0066em;
+  line-height: 1.2666em;
+  margin-bottom: 1em;
+  text-align: center;
+  color: #fff200;
+  margin-top: 0.9333em;
+}
+
+@keyframes SpinnerSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  };
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  };
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  };
+}

@@ -1,0 +1,7 @@
+.referralBar-button-icon {
+  margin-right: .5em;
+  height: 1.4285em;
+  vertical-align: bottom;
+  -webkit-filter: brightness(3);
+  filter: brightness(3);
+}

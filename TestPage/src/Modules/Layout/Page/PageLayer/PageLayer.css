@@ -1,0 +1,19 @@
+.page-layer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: inherit;
+}
+
+
+.page-layer--isCentered {
+	justify-content: center;
+	align-items: center;
+}
+
+.page-layer--isBottomAligned {
+  justify-content:flex-end;
+  align-items: flex-end;
+}

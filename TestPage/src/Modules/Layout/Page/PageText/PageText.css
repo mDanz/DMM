@@ -1,0 +1,17 @@
+.page-text {
+margin-bottom: 1em;
+margin-right: 1em;
+margin-left: 1em;
+}
+
+.page-text--isJustified {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.page-text--isCentered {
+  text-align: center;
+}
+
+.page-text--isCode {
+}

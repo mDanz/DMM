@@ -1,0 +1,16 @@
+
+.stats-bar-text {
+}
+
+.stats-bar-text-icon {
+  margin-right: .5em;
+  vertical-align: top;
+}
+
+.stats-bar-text-icon--front {
+  height: 1.4285em;
+}
+
+.stats-bar-text-icon--end {
+  height: 1.1428em;
+}

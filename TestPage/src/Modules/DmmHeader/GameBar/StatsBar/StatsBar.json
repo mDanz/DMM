@@ -1,0 +1,13 @@
+{
+  "dividendsTooltip"          : "Collected ETH - click to withdraw",
+  "legacyDividendsTooltip"    : "You still have ETH in our Legacy Contract - click to withdraw",
+  "legacyDividendsTooltipNoDivis"    : "You don't have ETH in our Legacy Contract",
+  "ownedGemsTooltip"          : "Number of gems you own",
+  "totalPriceTooltip"         : "Total price of all gems in chain",
+  "totalGemsTooltip"          : "Number of gems in chain",
+  "dividendsId"               : "dividendsButton",
+  "legacyDividendsId"         : "legacyDividendsButton",
+  "ownedGemsId"               : "ownedGemsText",
+  "totalPriceId"              : "totalPriceText",
+  "totalGemsId"               : "totlaGemsText"
+}

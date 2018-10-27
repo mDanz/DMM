@@ -1,0 +1,28 @@
+.header-bar {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  padding-left: 3em;
+  padding-right: 3em;
+  z-index: 10;
+}
+
+.header-bar-wrapper {
+  height: auto;
+  display: flex;
+  flex-wrap: inherit;
+  width: 100%;
+  position: relative;
+}
+
+.header-bar-wrapper>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.header-bar-background {
+  pointer-events: none;
+}

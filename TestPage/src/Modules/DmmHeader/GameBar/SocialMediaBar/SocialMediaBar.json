@@ -1,0 +1,15 @@
+{
+  "socialMediaBarId"    : "socialMediaBar",
+  "discordTooltipId"  : "discordButtonTooltip",
+  "discordToolTip"   : "Visit us on Discord",
+  "alt"             : "Social Media Image missing!",
+  "telegramTooltipId"  : "telegramButtonTooltip",
+  "telegramToolTip"   : "Visit us on Telegram",
+  "redditTooltipId"  : "redditButtonTooltip",
+  "redditToolTip"   : "Visit us on Reddit",
+  "wikiToolTip"     : "Find answers in our Wiki",
+  "wikiTooltipId"   : "wikiButtonTooltip",
+  "twitterToolTip"     : "Follow us on Twitter",
+  "twitterTooltipId"   : "twitterButtonTooltip"
+
+}

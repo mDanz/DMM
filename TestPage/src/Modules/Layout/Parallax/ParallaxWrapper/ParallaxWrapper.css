@@ -1,0 +1,10 @@
+.parallax {
+  perspective: 300px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax::-webkit-scrollbar {
+    width: 0;
+}

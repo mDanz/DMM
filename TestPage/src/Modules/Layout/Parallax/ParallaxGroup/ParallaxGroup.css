@@ -1,0 +1,11 @@
+.parallax-group {
+  position: relative;
+  transform-style: preserve-3d;
+
+  /* transform: translate3d(700px, 0, -800px) rotateY(30deg); */
+
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}

@@ -1,0 +1,31 @@
+.page-title {
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.page-title--primary {
+  font-size: 3em;
+}
+
+.page-title--secondary {
+  font-size: 2em;
+}
+
+.page-title--centered {
+  text-align: center;
+}
+
+.page-title--right {
+  text-align: right;
+}
+
+.page-title--left {
+  text-align: left;
+}
+
+
+.page-title--isEmphasized {
+}

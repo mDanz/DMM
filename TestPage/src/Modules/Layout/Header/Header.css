@@ -1,0 +1,11 @@
+.header {
+	display: flex;
+  flex-wrap: wrap;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.header--fixed {
+	position: fixed;
+}

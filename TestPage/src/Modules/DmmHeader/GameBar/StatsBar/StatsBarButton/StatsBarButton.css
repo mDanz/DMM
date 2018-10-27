@@ -1,0 +1,12 @@
+.stats-bar-button-icon {
+  margin-right: .5em;
+  vertical-align: top;
+}
+
+.stats-bar-button-icon--front {
+  height: 1.4285em;
+}
+
+.stats-bar-button-icon--end {
+  height: 1.1428em;
+}

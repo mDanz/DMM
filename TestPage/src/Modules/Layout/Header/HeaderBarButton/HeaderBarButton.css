@@ -1,0 +1,23 @@
+.header-bar-button {
+  	cursor: pointer;
+    text-align: center;
+    margin-right: 1.4285em;
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    -webkit-filter: brightness(3);
+    filter: brightness(3);
+}
+
+.header-bar-button--isDisabled {
+  pointer-events: none;
+}
+
+.header-bar-button--seperator {
+  margin-right: 3.5714em;
+}
+
+.header-bar-button--isEmphasized {
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%);
+}

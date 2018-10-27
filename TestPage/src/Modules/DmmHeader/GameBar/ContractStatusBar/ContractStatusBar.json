@@ -1,0 +1,7 @@
+{
+  "alt" : "LED Missing!",
+  "tooltipId" : "contractStatusBarTooltip",
+  "runningTooltip" : "Running on ",
+  "initialTooltip"  : "Initialized but not yet started on ",
+  "unknownTooltip"  : "Not connected"
+}

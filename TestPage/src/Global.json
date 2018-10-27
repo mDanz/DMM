@@ -1,0 +1,15 @@
+{
+  "rootLink"              : "/",
+  "routerBaseName"        : "/ropsten",
+  "homeLink"              : "/entrance",
+  "splitterContractAddress"  : "0xB66041c5AcCC99fCcCe8e4f06074ac52C9C556DD",
+  "controllerContractAddress"  : "0xB66041c5AcCC99fCcCe8e4f06074ac52C9C556DD",
+  "tokenContractAddress"  : "0xB66041c5AcCC99fCcCe8e4f06074ac52C9C556DD",
+  "adminContractAddress"  : "0xB66041c5AcCC99fCcCe8e4f06074ac52C9C556DD",
+  "powerChangesContractAddress"  : "0xB66041c5AcCC99fCcCe8e4f06074ac52C9C556DD",
+  "networkType"           : "ropsten",
+  "noMetamaskErrorMsg"    : "Metamask not installed!",
+  "notConnectedErrorMsg"    : "not connected to metamask.",
+  "unexpectedNetworkErrorMsg" : "not the right network.",
+  "notRunningWarningMsg"    : "The contract is not running!"
+}

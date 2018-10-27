@@ -1,0 +1,31 @@
+.clock-timeField {
+  padding: 1em .5em;
+  border: 1px #aaaaaa solid;
+  border-radius: .5em;
+  background: #666666;
+  opacity: 0.8;
+  margin: .5em;
+}
+
+.clock-timeField--text {
+  color: #ffffffff;
+}
+
+.clock-timeField--flex {
+  position: relative;
+	display: flex;
+  flex-direction: column;
+	word-wrap: break-word;
+	flex: 0 1 5em;
+	min-width: 0;
+}
+
+.clock-timeField-unit {
+  display: block;
+  font-size: .5em;
+}
+
+.clock-timeField-value {
+  display: block;
+  font-size: 1.5em;
+}

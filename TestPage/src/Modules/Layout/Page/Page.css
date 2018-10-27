@@ -1,0 +1,35 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  margin-top: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-position: center center;
+  background-size: cover;
+}
+
+.page--halfHeight {
+  min-height: 50vh;
+}
+
+.page--halfWidth {
+  min-width: 50vw;
+}
+
+.page--multiPage {
+  flex-direction: row;
+}
+
+.page--isCentered {
+	justify-content: center;
+	align-items: center;
+}
+
+.page-banner {
+  min-height: inherit;
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}

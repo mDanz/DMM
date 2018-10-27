@@ -1,0 +1,85 @@
+/* Common styles and resets */
+
+.dotNav ul {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	cursor: default;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.dotNav li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 1em 1em;
+	width: 1em;
+	height: 1em;
+	cursor: pointer;
+}
+
+.dotNav li a {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.5);
+	text-indent: -999em; /* make the text accessible to screen readers */
+	cursor: pointer;
+	position: absolute;
+}
+
+.dotNav li a:focus {
+	outline: none;
+}
+
+.dotNav--vertical {
+}
+
+.dotNav--vertical li a {
+  display: block;
+}
+
+.dotNav--vertical ul {
+  width: 3em;
+}
+
+.dotNav--vertical-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  height: 100vh;
+}
+
+.dotNav--fixed {
+  position: fixed;
+  left: 0;
+
+}
+
+/* Scale up */
+
+.dotNav--scaleup li a {
+	-webkit-transition: -webkit-transform 0.3s ease, background-color 0.3s ease;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.dotNav--scaleup li a:hover,
+.dotNav--scaleup li a:focus {
+	background-color: #FFFFFF;
+}
+
+.dotNav--scaleup li.dotNav-entry--selected a {
+	background-color: #FFFFFF;
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}

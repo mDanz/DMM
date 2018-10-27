@@ -1,0 +1,7 @@
+{
+  "refBarId"    : "referralBar",
+  "tooltipId"  : "referralButtonTooltip",
+  "referralText"     : "Waypoint",
+  "referralToolTip"   : "Share your referral link: ",
+  "alt"             : "Waypoint Image missing!"
+}

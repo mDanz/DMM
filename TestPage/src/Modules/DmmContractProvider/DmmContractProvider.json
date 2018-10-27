@@ -1,0 +1,5 @@
+{
+  "notConnectedErrorMsg"    : "not connected to metamask.",
+  "unexpectedNetworkErrorMsg" : "not the right network.",
+  "notRunningWarningMsg"    : "The contract is not running!"
+}

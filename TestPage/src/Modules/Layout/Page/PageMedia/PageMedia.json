@@ -1,0 +1,9 @@
+{
+  "unsupportedMedia"  : "This type of media is unsupported!",
+  "videoType"         : "video/mp4",
+  "videoCodec"        : "avc1.42E01E",
+  "output"            : "_output",
+  "buffer"            : "_buffer",
+  "video"             : "_video"
+
+}
