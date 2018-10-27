@@ -3,15 +3,15 @@ pragma solidity 0.4.24;
 import "./SafeMath.sol";
 
 contract PowerChangers{
-    using SafeMath for uint256;
-      
+	using SafeMath for uint256;
+
 	address private adminContract;
 
 	address[] private powerChangers;
 	uint256 private powerChangerCount;
 	uint256 private requirement;
 
-	modifier isAdminContract(){
+	modifier onlyAdminContract(){
 		require(msg.sender == adminContract, 'Only an admin is able to interact.');
 		_;
 	}
@@ -20,22 +20,22 @@ contract PowerChangers{
 		adminContract = _adminContract;
 	}
 
-	/*function setPowerChangersInterface(address _powerChangersInterfaceAddr) external isAdmin{
-		powerChangers = powerChangersInterface(_powerChangersInterfaceAddr);
-	}*/
+	function setAdminContract(address _adminContract) external /*onlyAdmin*/{
+		adminContract = _adminContract;
+	}
 
-	function addPC(address _address) external isAdminContract{
+	function addPC(address _address) external /*onlyAdminContract*/{
 		powerChangers.push(_address);
 		powerChangerCount += 1;
 	}
 
-	function removePC(address _address) external isAdminContract{
+	function removePC(address _address) external /*onlyAdminContract*/{
 		require(isPC(_address));
 		uint256 index = getPCIndex(_address);
 		delete powerChangers[index];
 	}
 
-	function setRequirement(uint256 _percent) external isAdminContract{
+	function setRequirement(uint256 _percent) external /*onlyAdminContract*/{
 		assert(_percent <= 100 && _percent >= 0);
 		requirement = _percent;
 	}
@@ -57,8 +57,8 @@ contract PowerChangers{
 		return false;
 	}
 
-	function getsApproved(uint256 _confirmations) public view returns(bool){
-		uint256 confirmations = SafeMath.mul(_confirmations, 100);
+	function getsApproved(uint256 _confirmationCount) public view returns(bool){
+		uint256 confirmations = SafeMath.mul(_confirmationCount, 100);
 		uint256 maxCount = SafeMath.mul(powerChangerCount, 100);
 		uint256 result = SafeMath.div(SafeMath.div(confirmations, maxCount), 100);
 		if(result >= requirement){
@@ -83,13 +83,14 @@ contract PowerChangers{
 }
 
 contract PowerChangersInterface{
+	function setAdminContract(address _adminContract) external;
 	function addPC(address _address) external;
 	function removePC(address _address) external;
 	function setRequirement(uint256 _percent) external;
 	function getRequirement() public view returns(uint256);
 	function getAllPC() public view returns(address[]);
 	function isPC(address _address) public view returns(bool);
-	function getsApproved(uint256 _confirmations) public view returns(bool);
+	function getsApproved(uint256 _confirmationCount) public view returns(bool);
 	function getPCIndex(address _address) public view returns(uint256);
 	function getPCCount() public view returns(uint256);
 }

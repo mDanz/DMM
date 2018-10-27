@@ -26,13 +26,19 @@ contract Token{
     controllerContract = _controllerAddress;
   }
 
-  /*function setControllerContract(address _controllerAddress) external isAdminContract{
-    controllerContract = _controllerAddress;
-  }*/
+  function setAdminContract(address _adminContract) external /*onlyAdmin*/{
+    adminContract = _adminContract;
+  }
 
-  function setUserTokens(address _user, uint256 _value) external isControllerContract{
-    shares[_user] = _value;
-    totalAmount += _value;
+  function setControllerContract(address _controllerAddress) external /*isAdminContract*/{
+    controllerContract = _controllerAddress;
+  }
+
+  function setUserTokens(address _user, uint256 _newValue) external /*isControllerContract*/{
+    uint256 previousValue = shares[_user];
+
+    shares[_user] = _newValue;
+    totalAmount += _newValue - previousValue;
     bool newUser = true;
     for (uint256 i = 0; i < users.length; i++) {
       if (users[i] == _user){
@@ -62,8 +68,9 @@ contract Token{
 }
 
 contract TokenInterface{
-  /*function setControllerContract(address _controllerAddress) external;*/
-  function setUserTokens(address _user, uint256 _value) external;
+  function setAdminContract(address _adminContract) external;
+  function setControllerContract(address _controllerAddress) external;
+  function setUserTokens(address _user, uint256 _newValue) external;
   function getTokenAmount(address _user) public view returns (uint256);
   function getPercentage(address _user) public view returns (uint256);
   function getTotalAmount() public view returns (uint256);

@@ -26,8 +26,8 @@ contract Controller{
 		_;
 	}
 
-	modifier onlyPCContract(){
-		require(msg.sender == pcContract, 'Only a Power Changer is able to interact.');
+	modifier onlyPC(){
+		require(powerChangers.isPC(msg.sender), 'Only a Power Changer is able to interact.');
 		_;
 	}
 
@@ -36,17 +36,21 @@ contract Controller{
 		pcContract = _PCAddress;
 	}
 
-	/*function setPCContract(address _PCAddress) external isAdminContract{
-		pcContract = _PCAddress;
-	}*/
+	function setAdminContract(address _adminContract) external /*onlyAdmin*/{
+		adminContract = _adminContract;
+	}
 
-	function initiateChange(uint256 _amount, address _user) external onlyPCContract{
+	function setPCContract(address _PCAddress) external /*isAdminContract*/{
+		pcContract = _PCAddress;
+	}
+
+	function initiateChange(uint256 _amount, address _user) external /*onlyPC*/{
 		address[] memory arr = new address[](1);
 		arr[0] = tx.origin;
 		changes.push(Change(1, _amount, _user, arr, false));
 	}
 
-	function approveChange(uint256 _id) external onlyPCContract{
+	function approveChange(uint256 _id) external /*onlyPC*/{
 		for (uint256 i = 0; i < changes[_id].confirmations.length; i++) {
 			if(changes[_id].confirmations[i] == tx.origin){
 				revert('You already approved this change.');
@@ -54,12 +58,12 @@ contract Controller{
 		}
 		changes[_id].confirmations.push(tx.origin);
 		changes[_id].confirmationCount += 1;
-		if (powerChangers.getsApproved(changes[_id].confirmations.length)){
+		if (powerChangers.getsApproved(changes[_id].confirmationCount)){
 			executeChange(_id);
 		}
 	}
 
-	function revokeApproval(uint256 _id) external onlyPCContract{
+	function revokeApproval(uint256 _id) external /*onlyPC*/{
 		require(changes[_id].approved != true);
 		if (changes[_id].confirmations[0] == tx.origin){
 			delete changes[_id];
@@ -145,7 +149,8 @@ contract Controller{
 }
 
 contract ControllerInterface{
-	/*function setPCContract(address _PCAddress) external;*/
+	function setAdminContract(address _adminContract) external;
+	function setPCContract(address _PCAddress) external;
 	function initiateChange(uint256 _amount, address _user) external;
 	function approveChange(uint256 _id) external;
 	function revokeApproval(uint256 _id) external;
